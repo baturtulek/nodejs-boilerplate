@@ -5,12 +5,13 @@ An opinionated boilerplate project for NodeJS for quickly building RESTful APIs 
 ## Features
 * Centralized Config Mechanism. 
 * Centralized & Automated Error Handling Mechanism
-	* Predifined custom exceptions added in order to simplify Error Handling
-	* Errors are automatically handled and send to the client in an descriptive manner.
+	* Predifined custom exceptions added
+	* Errors are automatically handled and send to the client in an descriptive manner. Error format will be explained in the following sections.
 *  Validate incoming requests using AJV.
 	* Load all AJV Schemas during start process of the API to speed up validation process.
 * Validate Environment Variables during start process of the API.
-* Automatic Logging with Custom Transport support
+* Automatic Logging with Winston
+  * Custom Transport support added
   * Logs are printed to both 
     * console
     * postgres table. 
@@ -163,7 +164,7 @@ LOG_REQUESTS_CONSOLE=true     # Is log requests to console enabled
 	```
 
 * **Error Response**
-	* Surround every controller with try catch statement, and send error in catch statement to the next middleware which is the error handling middleware. 
+	* Surround every controller with try catch statement, and send error object in catch statement to the next middleware which is the error handling middleware. 
   * Error will be automatically handled by the error handling middleware and send to the client.
 	* EX: 
 	```
@@ -225,3 +226,8 @@ Ahmet Batur Tülek
 
 ## License
 This project is released under the MIT License. See the `LICENSE` file for details.
+
+
+## Inspirations
+  * [https://github.com/hagopj13/node-express-boilerplate](https://github.com/hagopj13/node-express-boilerplate)
+  * [https://github.com/binitghetiya/express-sequelize-api-boilerplate](https://github.com/binitghetiya/express-sequelize-api-boilerplate)
