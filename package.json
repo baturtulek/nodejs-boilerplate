@@ -1,0 +1,75 @@
+{
+  "name": "nodejs-boilerplate",
+  "description": "RESTFUL Nodejs API Boilerplate",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Ahmet Batur Tülek",
+    "url": "https://github.com/baturtulek"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/baturtulek/nodejs-boilerplate.git"
+  },
+  "dependencies": {
+    "ajv": "^8.6.2",
+    "ajv-formats": "^2.1.0",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "envalid": "^7.2.1",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "http-status": "^1.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.6.0",
+    "sequelize": "^6.6.4",
+    "to-boolean": "^1.0.0",
+    "winston": "^3.3.3",
+    "winston-transport": "^4.4.0",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "jest": "^26.0.1",
+    "node-mocks-http": "^1.11.0",
+    "node-notifier": "^10.0.0",
+    "nodemon": "^2.0.9",
+    "prettier": "^2.4.1",
+    "supertest": "^6.1.6"
+  },
+  "scripts": {
+    "start": "node ./src/index.js",
+    "start-dev": "nodemon",
+    "docker-db-start": "docker-compose -f docker-compose.db.yaml --env-file .env up -d",
+    "docker-db-stop": "docker-compose -f docker-compose.db.yaml --env-file .env down",
+    "docker-prod-start": "docker-compose -f docker-compose.production.yaml --env-file .env up -d",
+    "docker-prod-stop": "docker-compose -f docker-compose.production.yaml --env-file .env down",
+    "docker-test-start": "docker-compose -f docker-compose.test.yaml --env-file .env.test up -d",
+    "docker-test-stop": "docker-compose -f docker-compose.test.yaml --env-file .env.test down",
+    "format": "prettier --check 'src/**/*.js'",
+    "format:fix": "prettier --write 'src/**/*.js'",
+    "test": "jest -i --colors --verbose --detectOpenHandles",
+    "test:watch": "jest -i --watchAll",
+    "coverage": "jest -i --coverage"
+  },
+  "keywords": [
+    "node.js",
+    "boilerplate",
+    "express",
+    "restful",
+    "api",
+    "sequelize",
+    "postgres",
+    "winston",
+    "winston-transport",
+    "jwt",
+    "ajv",
+    "jest",
+    "travis",
+    "docker",
+    "docker-compose",
+    "prettier"
+  ]
+}

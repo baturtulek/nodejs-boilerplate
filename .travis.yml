@@ -1,0 +1,20 @@
+language: node_js
+
+node_js:
+  - "14"
+
+services:
+  - postgresql
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm ci
+
+before_script:
+  - sleep 10
+
+script:
+  - npm run test
